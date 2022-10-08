@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap");
+
+@font-face {
+  font-family: "mm";
+  font-weight: normal;
+  src: url("../fonts/pdsr-2.5.ttf") format("truetype");
+}
+
+:root {
+  --primary: #2cd1ee;
+  --primary-soft: #26deffc5;
+  --secondary: #555555;
+  --light: #ffffff;
+  --dark: #000000;
+  --br: 5px;
+}
+
+body{
+  transition: 0.5s;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", "mm", sans-serif;
+  color: var(--secondary);
+}
+
+.app {
+  width: 700px;
+  margin: 100px auto;
+}
+
+.output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+}
+
+.brand {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.result-container {
+  display: flex;
+  align-items: center;
+}
+
+.result {
+  font-size: 50px;
+}
+
+.divider {
+  background: var(--secondary);
+  height: 3px;
+  width: 100%;
+}
+
+.calc {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.container {
+  width: 150px;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input,
+.from,
+.to {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: var(--br);
+  border: 1px solid var(--secondary);
+}
+
+.input {
+  text-align: right;
+}
+
+.calc-btn {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  border-radius: var(--br);
+  background-color: var(--primary);
+  border: 1px solid var(--secondary);
+  color: var(--light);
+  text-transform: uppercase;
+}
+
+.calc-btn:active {
+  background-color: var(--primary-soft);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+@-moz-document url-prefix() {
+  .ui-select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+  .ui-select select {
+    width: 110%;
+    background-position: right 30px center !important;
+    border: none !important;
+  }
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+select {
+  height: 34px;
+}
+
+.history {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.history td,
+.history th {
+  padding: 20px;
+  border-radius: var(--br);
+}
+
+.history tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.history tr:hover {
+  background-color: #ddd;
+}
+
+.history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--primary);
+  color: white;
+}
+
+#rowSpacer {
+  background-color: #ddd;
+}
+
+.btn-danger {
+  padding: 10px 20px;
+  background-color: #ff234f;
+  color: #fff;
+  border: none;
+  border-radius: var(--br);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tfooter {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.tfooter .btn2-danger {
+  padding: 12px 22px;
+  font-size: 17px;
+  padding: 10px 20px;
+  background-color: #ff234f;
+  color: #fff;
+  border: none;
+  border-radius: var(--br);
+}
+
+.btn2-danger:active,
+.btn-danger:active {
+  background-color: crimson;
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    width: 96%;
+    margin: 30px auto;
+  }
+
+  .output {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .result-container {
+    align-self: flex-end;
+  }
+
+  .calc {
+    flex-flow: wrap;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .from-container,
+  .to-container {
+    width: 46%;
+    margin-bottom: 20px;
+  }
+
+  .input {
+    padding: 10px;
+  }
+
+  .from,
+  .to {
+    padding: 18px;
+  }
+
+  .calc-btn {
+    padding: 15px 0;
+  }
+
+  tr th:last-child,
+  tr td:last-child {
+    display: none;
+  }
+}
+
+.sun,
+.moon {
+  width: 25px;
+  height: 25px;
+  fill: #fff;
+  stroke: #fff;
+}
+.toggler .sun {
+  display: none;
+}
+.toggler .moon {
+  display: inline-block;
+}
+.toggler {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #101010;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.toggler:active {
+  background-color: #333;
+}

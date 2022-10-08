@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class</title>
+  </head>
+  <body>
+    <script>
+      let myObj = {
+        name: "Min Phone Aung",
+        age: 15,
+        introduction: function () {
+          return `My name is ${this.name} and ${this.age}`;
+        },
+      };
+
+      // class expression
+      class Me {
+        name = "Min Phone Aung";
+        age = 15;
+
+        // access modifier
+        #gf = "Jennie Kim"; // private property
+
+        introduction() {
+          return `My name is ${this.name} and ${this.age}`;
+        }
+
+        showGf() {
+          return `${this.#gf} is my girlfriend.`;
+        }
+      }
+
+      let me = new Me();
+
+      class Reg {
+        // magic method
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+          console.log("This is constructor");
+        }
+
+        // prototype method
+        get showBdy() {
+          let currentYear = new Date().getFullYear();
+          return currentYear - this.age;
+        }
+
+        // static method
+        static Test() {
+          return "this is static method";
+        }
+      }
+
+      let mgmg = new Reg("mgmg", 15);
+
+      console.log(mgmg.name);
+      console.log(mgmg.age);
+
+      let person2 = new Reg("kyaw kyaw", 18);
+      console.log(person2.name);
+      console.log(person2.age);
+
+      let person3 = new Reg("Zaw Zaw", 16);
+      console.log(person3.showBdy);
+
+      console.log(Reg.Test());
+    </script>
+  </body>
+</html>

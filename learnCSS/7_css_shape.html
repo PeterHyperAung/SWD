@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape</title>
+    <style>
+      div {
+        display: inline-block;
+      }
+
+      h1 {
+        color: #ff3c3c;
+      }
+      .square {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #ff3c3c;
+      }
+
+      .rounded {
+        border-radius: 5px;
+      }
+
+      .rect {
+        width: 150px;
+        height: 50px;
+        border: 2px solid #ff3c3c;
+      }
+
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid #ff3c3c;
+        background-color: #ff3c3c;
+      }
+      .img-circle {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .bg-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-image: url("../images/jennie2.jpg");
+        background-size: cover;
+      }
+      .triangle {
+        border: 50px solid transparent;
+        border-bottom-color: #ff3c3c;
+        border-top-width: 0;
+      }
+      .triangle-2 {
+        border: 50px solid transparent;
+        border-bottom-color: #ff3c3c;
+        border-right-color: #ff3c3c;
+      }
+      .triangle-3 {
+        border: 50px solid transparent;
+        border-bottom-color: #ff3c3c;
+        border-left-color: #ff3c3c;
+      }
+      .envelope {
+        border: 50px solid #ff3c3c;
+        border-top-color: #dd2c2c;
+        border-bottom-width: 10px;
+      }
+      .arrow {
+        width: 120px;
+        height: 60px;
+        background-color: #ff3c3c;
+        margin-left: 50px;
+        position: relative;
+      }
+
+      .arrow:before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        border: 30px solid transparent;
+        border-top-color: #ff3c3c;
+        border-bottom-color: #ff3c3c;
+        border-right-width: 0;
+        left: -30px;
+      }
+
+      .arrow:after {
+        content: "";
+        width: 0;
+        height: 0px;
+        position: absolute;
+        border: 30px solid transparent;
+        border-left: 50px solid #ff3c3c;
+        right: -80px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML, CSS Shapes</h1>
+    <div class="square"></div>
+    <div class="square rounded"></div>
+    <div class="rect"></div>
+    <div class="rect rounded"></div>
+    <hr />
+    <div class="circle"></div>
+    <img src="../images/jennie4.jpg" alt="" class="img-circle" />
+    <img src="../images/jennie3.jpg" alt="" class="img-circle" />
+    <div class="bg-img"></div>
+    <hr />
+    <div class="triangle"></div>
+    <div class="triangle-2"></div>
+    <div class="triangle-3"></div>
+
+    <div class="envelope"></div>
+    <hr />
+    <div class="arrow"></div>
+  </body>
+</html>

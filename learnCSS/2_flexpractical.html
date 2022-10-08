@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box Practical</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .bg-grey {
+        background-color: grey;
+      }
+      .bg-skyblue {
+        background-color: skyblue;
+      }
+      .bg-orange {
+        background-color: orangered;
+      }
+
+      .one {
+        height: 50vh;
+        background-color: #f5f5f5;
+        display: flex;
+      }
+      .part {
+        flex-grow: 1;
+      }
+
+      .part.right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .two {
+        width: 990px;
+        display: flex;
+        margin: auto;
+        margin-top: -100px;
+        justify-content: space-between;
+      }
+
+      .two-part {
+        text-align: center;
+        width: 300px;
+        padding: 30px 15px;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      .third {
+        display: flex;
+        margin: 100px auto;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .third-part {
+        width: 500px;
+      }
+
+      .four {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5;
+      }
+      .four-img {
+        width: 450px;
+      }
+      .four-part {
+        width: 450px;
+        padding: 0 40px;
+      }
+
+      .five {
+        background-color: #fff;
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+
+      @media screen and (max-width: 480px) {
+        .one,
+        .two,
+        .third,
+        .four,
+        .five {
+          flex-direction: column;
+        }
+
+        .two {
+          align-items: center;
+          margin-top: -100px;
+        }
+
+        .third {
+          width: 80%;
+        }
+        div,
+        section {
+          max-width: 100% !important;
+        }
+
+        img {
+          width: 100vw !important;
+        }
+        body :last-child {
+          margin-bottom: 50px;
+        }
+        .four {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="one">
+      <div class="part left bg-grey"></div>
+      <div class="part right bg-skyblue">
+        <div class="" style="width: 300px">
+          <h1>This is Title</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+            consequuntur rem architecto quis, cupiditate, totam doloribus,
+            voluptas necessitatibus impedit dignissimos nihil? Ab, architecto
+            itaque modi odio pariatur aliquam quam esse.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="two">
+      <div class="two-part">
+        <h1>This is one</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+          possimus commodi, vero totam harum quae illo distinctio alias ipsum
+          illum id. Accusamus quia beatae assumenda facere delectus, ratione
+          nihil soluta.
+        </p>
+      </div>
+      <div class="two-part">
+        <h1>This is two</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi
+          distinctio sequi est, alias corporis a blanditiis minima! Amet quae
+          provident voluptatem, nam corrupti maiores voluptate nobis ratione,
+          reprehenderit aspernatur quisquam!
+        </p>
+      </div>
+      <div class="two-part">
+        <h1>This is three</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+          harum quis perferendis nisi soluta est ut laborum dolores dicta quas
+          nemo molestias nulla impedit dolorum ullam, maxime natus fugit beatae.
+        </p>
+      </div>
+    </section>
+
+    <section class="third">
+      <div class="third-part">
+        <h1>This is third part</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptas
+          asperiores eum quod, qui rerum repellat veniam possimus porro ipsum
+          excepturi cupiditate, minima dolorum voluptatem ut temporibus ab eaque
+          quasi! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </section>
+
+    <section class="four">
+      <img
+        src="../images/jennie4.jpg"
+        alt="jennie's cute photo"
+        class="four-img"
+      />
+      <div class="four-part">
+        <h1>This is my girl</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          ducimus inventore repellat, necessitatibus provident quasi tempore
+          quibusdam dolorum voluptate quia! Hic natus quibusdam necessitatibus
+          reiciendis itaque culpa animi officiis quis.
+        </p>
+      </div>
+    </section>
+
+    <section class="four five">
+      <img
+        src="../images/jennie5.webp"
+        alt="jennie's cute photo"
+        class="four-img"
+      />
+      <div class="four-part">
+        <h1>This is my girl</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          ducimus inventore repellat, necessitatibus provident quasi tempore
+          quibusdam dolorum voluptate quia! Hic natus quibusdam necessitatibus
+          reiciendis itaque culpa animi officiis quis.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

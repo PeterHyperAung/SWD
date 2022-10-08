@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piano Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: radial-gradient(circle at 13% 47%,
+          rgba(140, 140, 140, 0.03) 0%,
+          rgba(140, 140, 140, 0.03) 25%,
+          transparent 25%,
+          transparent 100%),
+        radial-gradient(circle at 28% 63%,
+          rgba(143, 143, 143, 0.03) 0%,
+          rgba(143, 143, 143, 0.03) 16%,
+          transparent 16%,
+          transparent 100%),
+        radial-gradient(circle at 81% 56%,
+          rgba(65, 65, 65, 0.03) 0%,
+          rgba(65, 65, 65, 0.03) 12%,
+          transparent 12%,
+          transparent 100%),
+        radial-gradient(circle at 26% 48%,
+          rgba(60, 60, 60, 0.03) 0%,
+          rgba(60, 60, 60, 0.03) 6%,
+          transparent 6%,
+          transparent 100%),
+        radial-gradient(circle at 97% 17%,
+          rgba(150, 150, 150, 0.03) 0%,
+          rgba(150, 150, 150, 0.03) 56%,
+          transparent 56%,
+          transparent 100%),
+        radial-gradient(circle at 50% 100%,
+          rgba(25, 25, 25, 0.03) 0%,
+          rgba(25, 25, 25, 0.03) 36%,
+          transparent 36%,
+          transparent 100%),
+        radial-gradient(circle at 55% 52%,
+          rgba(69, 69, 69, 0.03) 0%,
+          rgba(69, 69, 69, 0.03) 6%,
+          transparent 6%,
+          transparent 100%),
+        linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+      width: 100%;
+      height: 100vh;
+    }
+
+    section {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .btn {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      width: 90px;
+      height: 270px;
+      position: relative;
+      background-color: #fff;
+    }
+
+    .btn span {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+
+    .group {
+      display: flex;
+      overflow: hidden;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+      margin-bottom: 5px;
+    }
+
+    .btn:active {
+      background-color: #eee;
+      transform: perspective(200px) rotateX(-2deg);
+    }
+
+    .dark {
+      width: 40px;
+      height: 140px;
+      position: absolute;
+      background-color: #000;
+      left: 160px;
+      border-radius: 3px;
+    }
+
+    .dark:nth-of-type(2) {
+      left: 250px;
+    }
+
+    .dark:nth-of-type(3) {
+      left: 430px;
+    }
+
+    .dark:nth-of-type(4) {
+      left: 520px;
+    }
+
+    input {
+      width: 85%;
+      height: 40px;
+      padding: 10px;
+    }
+
+    .save {
+      flex-grow: 1;
+      color: white;
+      background-color: #000;
+    }
+
+    ul {
+      padding: 20px;
+    }
+
+    ul li button {
+      color: white;
+      background-color: #000;
+      padding: 10px;
+    }
+
+    ul li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <br /><br />
+  <section>
+    <div class="group">
+      <input type="text" id="cords" />
+      <button onclick="saveCord()" class="save">Save</button>
+    </div>
+    <div class="group">
+      <button onclick="run('C4')" class="btn"><span>C4</span></button>
+      <button onclick="run('D4')" class="btn"><span>D4</span></button>
+      <button onclick="run('E4')" class="btn"><span>E4</span></button>
+      <button onclick="run('F4')" class="btn"><span>F4</span></button>
+      <button onclick="run('G4')" class="btn"><span>G4</span></button>
+      <button onclick="run('A4')" class="btn"><span>A4</span></button>
+      <button onclick="run('B4')" class="btn"><span>B4</span></button>
+      <button onclick="run('C5')" class="btn"><span>C5</span></button>
+
+      <div class="dark"></div>
+      <div class="dark"></div>
+      <div class="dark"></div>
+      <div class="dark"></div>
+    </div>
+    <ul id="list"></ul>
+  </section>
+
+  <script>
+    let cords = document.getElementById("cords");
+    let ul = document.getElementById("list");
+    let pianoMemory = [];
+
+    function run(x) {
+      const a = new Audio(`./audio/${x}.mp3`);
+      a.play();
+      cords.value += x + ",";
+    }
+
+    function saveCord() {
+      let input = cords.value;
+      pianoMemory.push(input + " ");
+      ul.innerHTML = "";
+      cords.value = "";
+      pianoMemory.map(function (el, index) {
+        list.innerHTML += `<li>${el} <button onclick="replay('${index}')">Replay</button></li>`;
+      });
+    }
+
+    function runMemory(arr, delay = 500) {
+      let x = delay;
+      arr.map(function (el, index) {
+        setTimeout(run, x, el); // function parameter passing
+        x += delay;
+      });
+    }
+
+    function replay(x) {
+      let tempo = parseInt(prompt("Please enter a millisecond"));
+      let current = pianoMemory[x].split(",");
+      current.pop();
+      runMemory(current, tempo);
+    }
+
+    document.addEventListener("keyup", function (e) {
+      let current = e.keyCode;
+      if (current === 65) {
+        run("C4");
+      } else if (current == 83) {
+        run("D4");
+      } else if (current == 68) {
+        run("E4");
+      } else if (current == 70) {
+        run("F4");
+      } else if (current == 74) {
+        run("G4");
+      } else if (current == 75) {
+        run("A4");
+      } else if (current == 76) {
+        run("B4");
+      } else if (current == 186) {
+        run("C5");
+      }
+    });
+  </script>
+</body>
+
+</html>

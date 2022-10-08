@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="vendor/feather-icons-web/feather.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      label {
+        margin-top: 15px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main container-fluid">
+      <div class="row">
+        <!-- sidebar -->
+        <aside class="col-12 col-lg-3 col-xl-2 sidebar vh-100">
+          <div
+            class="d-flex justify-content-between align-items-center logo-sticky"
+          >
+            <div class="">
+              <span
+                class="bg-primary p-2 text-center rounded d-inline-flex justify-content-center align-items-center"
+              >
+                <i class="feather-shopping-bag text-white h4 mb-0"></i> </span
+              >&nbsp;
+              <span class="font-weight-bolder h4">My Shop</span>
+            </div>
+            <button class="hide-sidebar-btn btn btn-sm d-lg-none d-block">
+              <i class="feather-x text-primary" style="font-size: 2em"></i>
+            </button>
+          </div>
+          <div class="nav-menu mt-2">
+            <ul>
+              <li class="menu-item mb-2 mt-3">
+                <a href="dashboard.html" class="menu-item-link">
+                  <span>
+                    <i class="feather-home"></i>
+                    Dashboard</span
+                  >
+                </a>
+              </li>
+
+              <li class="menu-title">Manage Item</li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-plus-circle"></i>
+                    Add Item</span
+                  >
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="datatable.html" class="menu-item-link">
+                  <span>
+                    <i class="feather-list"></i>
+                    Item List</span
+                  >
+                  <span class="b text-primary">15</span>
+                </a>
+              </li>
+              <li class="menu-spacer"></li>
+
+              <li class="menu-title">Manage Item</li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-plus-circle"></i>
+                    Add Item</span
+                  >
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-list"></i>
+                    Item List</span
+                  >
+                  <span class="b text-primary">15</span>
+                </a>
+              </li>
+              <li class="menu-spacer"></li>
+
+              <li class="menu-title">Manage Item</li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-plus-circle"></i>
+                    Add Item</span
+                  >
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-list"></i>
+                    Item List</span
+                  >
+                  <span class="b text-primary">15</span>
+                </a>
+              </li>
+              <li class="menu-spacer"></li>
+
+              <li class="menu-title">Manage Item</li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-plus-circle"></i>
+                    Add Item</span
+                  >
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-list"></i>
+                    Item List</span
+                  >
+                  <span class="b text-primary">15</span>
+                </a>
+              </li>
+              <li class="menu-spacer"></li>
+
+              <li class="menu-title">Manage Item</li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-plus-circle"></i>
+                    Add Item</span
+                  >
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-list"></i>
+                    Item List</span
+                  >
+                  <span class="b text-primary">15</span>
+                </a>
+              </li>
+              <li class="menu-spacer"></li>
+
+              <li class="menu-title">Manage Item</li>
+              <li class="menu-item nav-active">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-plus-circle"></i>
+                    Add Item</span
+                  >
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-list"></i>
+                    Item List</span
+                  >
+                  <span class="b text-primary">15</span>
+                </a>
+              </li>
+              <li class="menu-spacer"></li>
+
+              <li class="menu-title">Manage Item</li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-plus-circle"></i>
+                    Add Item</span
+                  >
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-item-link">
+                  <span>
+                    <i class="feather-list"></i>
+                    Item List</span
+                  >
+                  <span class="b text-primary">15</span>
+                </a>
+              </li>
+              <li class="menu-spacer"></li>
+            </ul>
+          </div>
+        </aside>
+        <div class="col-12 col-lg-9 col-xl-10 content vh-100">
+          <div class="row header mb-3">
+            <div class="col-12">
+              <div
+                class="p-2 bg-primary rounded d-flex justify-content-between align-items-center"
+              >
+                <button
+                  class="show-sidebar-btn btn btn-primary d-block d-lg-none"
+                >
+                  <i class="feather-menu text-light" style="font-size: 2em"></i>
+                </button>
+                <form action="" method="post" class="d-none d-sm-block">
+                  <div class="d-flex">
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      class="form-control mx-1"
+                    />
+                    <button class="btn btn-light">
+                      <i class="feather-search text-primary"></i>
+                    </button>
+                  </div>
+                </form>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="./img/user/avatar3.jpg"
+                      alt=""
+                      class="user-img shadow-sm rounded-circle"
+                    />
+                    Tester
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li><a class="dropdown-item" href="#">logout</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--            content area start-->
+
+          <div class="row">
+            <div class="col-12">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white mb-4 p-3">
+                  <li class="breadcrumb-item">
+                    <a href="dashboard.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="datatable.html">Item</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Add item
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <div class="card mb-4 p-3">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <h4><i class="feather-plus-circle"></i> Add Item</h4>
+
+                    <a href="datatable.html" class="btn btn-outline-primary">
+                      <i class="feather-list"></i>
+                    </a>
+                  </div>
+                  <hr />
+
+                  <form action="">
+                    <div class="row">
+                      <div class="col-12 col-md-6">
+                        <div class="form-group py-1">
+                          <label for="photo">Photo Upload </label>
+                          <i
+                            class="feather-info"
+                            data-bs-container="body"
+                            data-bs-toggle="popover"
+                            data-bs-placement="top"
+                            data-bs-content="Top popover"
+                          ></i>
+                          <input
+                            type="file"
+                            name="photo"
+                            id="photo"
+                            required
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="name">Item Name</label>
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="t">Item Type</label>
+
+                          <select
+                            name="t"
+                            id="t"
+                            class="form-control custom-select"
+                          >
+                            <option value="" selected disabled></option>
+                            <option value="">Wet Goods</option>
+                            <option value="">Dry Goods</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="c">Category</label>
+
+                          <select
+                            name="c"
+                            id="c"
+                            class="form-control custom-select"
+                          >
+                            <option selected disabled>Select Category</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="sc">Sub Category</label>
+
+                          <select
+                            name="sc"
+                            id="sc"
+                            class="form-control custom-select"
+                          >
+                            <option selected disabled>
+                              Select Sub Category
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="row">
+                          <div class="col-6">
+                            <label for="q">Item Quantity</label>
+                            <input type="text" id="q" class="form-control" />
+                          </div>
+                          <div class="col-6">
+                            <label for="unit">Unit</label>
+                            <input
+                              name="unit"
+                              id="unit"
+                              class="form-control custom-select"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group mt-3 mt-md-4">
+                          <label for="price">Price</label>
+                          <input
+                            type="number"
+                            id="price"
+                            name="price"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Description</label>
+                          <br />
+                          <textarea
+                            name="description"
+                            id="description"
+                            cols="40"
+                            rows="8.7"
+                            class="form-control"
+                            style="resize: none"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="text-right">
+                      <button class="btn btn-primary">Add item</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--            content area end-->
+        </div>
+      </div>
+    </section>
+
+    <script src="./vendor/jquery-3.6.0.min.js"></script>
+    <script src="./vendor/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./vendor/way_point/jquery.waypoints.min.js"></script>
+    <script src="./vendor/counter_up/counter_up.js"></script>
+    <script src="./vendor/chart_js/Chart.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      let category = ["phone", "computer", "TV"];
+      let subcategory = [
+        { name: "Iphone", categoryId: 0 },
+        { name: "Mi", categoryId: 0 },
+        { name: "Hp", categoryId: 1 },
+        { name: "Acer", categoryId: 1 },
+        { name: "Panasonic", categoryId: 2 },
+      ];
+      category.map((el, idx) => {
+        $("#c").append(`<option value='${idx}'>${el}</option>`);
+      });
+
+      subcategory.map(function (el, idx) {
+        $("#sc").append(
+          `<option value="${idx}" data-category="${el.categoryId}" >${el.name}</option>`
+        );
+      });
+
+      $("#c").change(function () {
+        let current = $(this).val();
+        $("#sc option").hide();
+        $(`[data-category="${current}"]`).show();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>MMS Exchange</title>
+    <meta name="title" content="MMS Exchange" />
+    <meta
+      name="description"
+      content="Exchange calculator to help you get your job done a lot faster than ever."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mms-it.com" />
+    <meta property="og:title" content="MMS Exchange" />
+    <meta
+      property="og:description"
+      content="Exchange calculator to help you get your job done a lot faster than ever."
+    />
+    <meta property="og:image" content="../__data/2x/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mms-it.com" />
+    <meta property="twitter:title" content="MMS Exchange" />
+    <meta
+      property="twitter:description"
+      content="Exchange calculator to help you get your job done a lot faster than ever."
+    />
+    <meta property="twitter:image" content="../__data/2x/icon.png" />
+    <title>Exchange Calculator</title>
+    <link
+      rel="icon"
+      href="../__data/1x/logo.png"
+      type="image/png"
+      sizes="30x30"
+    />
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./vendor/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/night-mode.css" type="text/css" />
+  </head>
+  <body>
+    <script>
+      (function(){
+        if(localStorage.getItem('mode') === 'black'){
+          document.body.classList.add("night-mode");
+        }
+      })();
+    </script>
+    <section class="app animate__animated animate__slideInDown">
+      <div class="output">
+        <div class="brand-container">
+          <img src="../__data/logo/logo.svg" alt="" class="logo" />
+          <p class="brand">MMEx</p>
+        </div>
+        <div class="result-container">
+          <div class="result" id="result">0.00</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <form class="calc">
+        <div class="input-container container">
+          <label for="input">Input</label>
+          <input
+            type="number"
+            class="input"
+            id="input"
+            placeholder="0.00"
+            required
+            autofocus
+            min="1"
+          />
+        </div>
+        <div class="from-container container">
+          <label for="from">From</label>
+          <select name="" id="from" class="from">
+            <option value="" selected disabled required>Select Currency</option>
+          </select>
+        </div>
+        <div class="to-container container">
+          <label for="to">To</label>
+          <select name="" id="to" class="to" required></select>
+        </div>
+        <div class="calculate-container container">
+          <button class="calc-btn" id="calc">Calculate</button>
+        </div>
+      </form>
+      <div class="history-container">
+        <table class="history">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Result</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="historyList"></tbody>
+        </table>
+        <div class="tfooter">
+          <button class="btn2-danger" onclick="clearAll();">Clear All</button>
+        </div>
+      </div>
+    </section>
+
+    <button class="toggler animate__animated animate__slideInUp" id="toggler">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="sun"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="moon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        />
+      </svg>
+    </button>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

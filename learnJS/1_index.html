@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <img src="../images/jennie4.jpg" alt="" width="250px" id="one" />
+    <img
+      src="../images/jennie4.jpg"
+      alt=""
+      width="250px"
+      id="two"
+      class="two"
+    />
+    <img src="../images/jennie4.jpg" alt="" width="250px" class="two" />
+
+    <button id="one">click</button>
+
+    <p id="hhz">Hein Htet Zan</p>
+    <p id="kh">Ko Htet</p>
+    <script>
+      // mouse mouse down mouse up
+
+      // keyboard
+
+      // method
+      document.write("hello");
+
+      // property
+      console.log(document.body);
+      console.log(document.images);
+      console.log(document.images[2]);
+      console.log(document.links);
+
+      console.log(document.getElementById("one"));
+      console.log(document.getElementsByClassName("two"));
+      console.log(document.getElementsByTagName("img"));
+
+      console.log(document.querySelector(".two"));
+      console.log(document.querySelectorAll("img"));
+      let x = 6;
+      document.querySelectorAll("img").forEach(function (el) {
+        el.src = `../images/jennie${(x += 1)}.jpg`;
+      });
+
+      document.getElementsByTagName("body")[0].innerHTML +=
+        "<h1>Hello World</h1>";
+      document.getElementsByTagName("body")[0].innerHTML +=
+        "<h2>Hello World</h2>";
+
+      let body = document.body;
+      let p = document.createElement("p"); // <p></p>
+      let text = document.createTextNode("Min Ga Lar Par");
+      p.appendChild(text);
+      body.appendChild(p);
+
+      let kh = document.getElementById("kh");
+
+      body.insertBefore(p, kh);
+      document.getElementById("one").onclick = function () {
+        alert("this is onclick property");
+      };
+
+      document.getElementById("two").addEventListener("click", function () {
+        alert("this is add addEventListener");
+      });
+
+      body.removeChild(document.getElementById("hhz"));
+    </script>
+  </body>
+</html>

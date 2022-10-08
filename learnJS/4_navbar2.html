@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nav</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: #f4f4f4;
+      }
+
+      ::selection {
+        background-color: transparent;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        margin: auto;
+        padding: 10px 0;
+        background: #fff;
+        padding: 15px;
+        transition: 0.5s;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      }
+
+      header:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .mobile-menu-btn {
+        margin: 10px;
+        display: none;
+        border: none;
+        width: 40px;
+        padding: 4px 0;
+        height: 40px;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+
+      .mobile-menu-btn svg {
+        width: 27px;
+        color: deepskyblue;
+      }
+      .nav-list {
+        padding: 0;
+      }
+      .nav-list li {
+        list-style-type: none;
+        display: inline-block;
+      }
+      .nav-item {
+        background-color: deepskyblue;
+        padding: 10px 15px;
+        display: inline-block;
+        width: 120px;
+        color: #fff;
+      }
+
+      a {
+        color: dodgerblue;
+        text-decoration: none;
+        font-weight: 400;
+      }
+
+      .brand a {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      @media screen and (max-width: 800px) {
+        header {
+          width: 100%;
+          flex-wrap: wrap;
+          padding: 10px 15px;
+        }
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .mobile-menu-btn:focus {
+          border: 2px solid deepskyblue;
+        }
+        .nav {
+          width: 100%;
+          display: none;
+        }
+        .nav-list li {
+          display: block;
+        }
+
+        .nav-item {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .show-nav {
+          display: block;
+          position: absolute;
+          z-index: -1;
+          top: 70px;
+          padding: 10px;
+          right: 0;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+          animation: show-slow 0.5s;
+        }
+
+        .hide-nav {
+          display: block;
+          position: absolute;
+          z-index: -1;
+          top: 70px;
+          padding: 10px;
+          right: 0;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+          animation: hide-slow 0.5s;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      @keyframes show-slow {
+        0% {
+          transform: translateY(-350px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes hide-slow {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        99% {
+          transform: translateY(-340px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-350px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <a href="">MMS IT</a>
+      </div>
+
+      <button class="mobile-menu-btn" onclick="navControl()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-item" href="#">Home</a>
+          </li>
+          <li>
+            <a class="nav-item" href="#">About</a>
+          </li>
+          <li>
+            <a class="nav-item" href="#">Services</a>
+          </li>
+          <li>
+            <a class="nav-item" href="#">Gallery</a>
+          </li>
+          <li>
+            <a class="nav-item" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <script>
+      let nav = document.querySelector("nav");
+      function navControl() {
+        nav.classList.toggle("show-nav");
+        if (!nav.classList.contains("show-nav")) {
+          nav.classList.add("hide-nav");
+        } else {
+          nav.classList.remove("hide-nav");
+        }
+      }
+    </script>
+  </body>
+</html>

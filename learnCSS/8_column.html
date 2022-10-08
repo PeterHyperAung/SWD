@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Column</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        color: #333;
+      }
+      body {
+        padding: 30px;
+      }
+      .paragraph {
+        column-count: 3;
+        column-width: 300px;
+        column-rule: 1px solid black;
+        text-align: justify;
+      }
+      p {
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+      .heading {
+        color: dodgerblue;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .full {
+        column-span: all;
+        margin-top: 30px;
+      }
+      @media screen and (max-width: 768px) {
+        .heading {
+          margin-bottom: 30px;
+        }
+        body {
+          padding: 10px;
+        }
+        .full {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">CSS3 Column Property</h1>
+    <div class="paragraph">
+      <p class="full">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam
+        eum iste sint ipsa, inventore in, excepturi eveniet facere eaque, illo
+        praesentium molestias doloribus magni illum neque temporibus velit
+        perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Optio dolores, architecto labore sint vel corporis beatae eius officia
+        quidem libero quaerat totam recusandae repudiandae error rerum alias
+        animi odit doloribus!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam
+        eum iste sint ipsa, inventore in, excepturi eveniet facere eaque, illo
+        praesentium molestias doloribus magni illum neque temporibus velit
+        perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Aperiam, est? Tenetur, ut tempore expedita quibusdam officiis aperiam
+        aspernatur ab nobis nulla quis possimus. Iusto perspiciatis eius soluta
+        voluptatum ducimus veniam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam
+        eum iste sint ipsa, inventore in, excepturi eveniet facere eaque, illo
+        praesentium molestias doloribus magni illum neque temporibus velit
+        perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Aliquid, blanditiis porro. Ducimus, veniam quia. Eveniet tenetur
+        consequatur accusantium quod nulla voluptatum ipsum ducimus incidunt.
+        Molestias laborum repudiandae assumenda a officia.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam
+        eum iste sint ipsa, inventore in, excepturi eveniet facere eaque, illo
+        praesentium molestias doloribus magni illum neque temporibus velit
+        perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Ipsa modi velit dolor temporibus laboriosam, quis quam, sunt quidem
+        eaque repellat atque quasi iste ratione quia deleniti! Omnis fugit vero
+        minus.
+      </p>
+      <p class="full">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam
+        eum iste sint ipsa, inventore in, excepturi eveniet facere eaque, illo
+        praesentium molestias doloribus magni illum neque temporibus velit
+        perspiciatis. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Laboriosam beatae labore quam error corporis, facilis aperiam nam
+        inventore nostrum dolorem minus esse soluta explicabo, expedita quidem
+        mollitia repellendus modi odit?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam
+        eum iste sint ipsa, inventore in, excepturi eveniet facere eaque, illo
+        praesentium molestias doloribus magni illum neque temporibus velit
+        perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Sequi possimus expedita est dolorum saepe error officiis tempora
+        suscipit velit? Architecto, delectus. Ut, fugit. Fuga culpa dolor sint
+        autem quidem minus!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam
+        eum iste sint ipsa, inventore in, excepturi eveniet facere eaque, illo
+        praesentium molestias doloribus magni illum neque temporibus velit
+        perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Ipsum eos corrupti, facere magnam dignissimos harum rem quod dolor omnis
+        expedita architecto explicabo quidem magni nobis. Repellendus animi
+        veritatis non beatae!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem totam
+        eum iste sint ipsa, inventore in, excepturi eveniet facere eaque, illo
+        praesentium molestias doloribus magni illum neque temporibus velit
+        perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Corporis beatae et, expedita nobis ratione saepe facilis iure error,
+        eveniet doloribus cupiditate quis! Mollitia, harum unde blanditiis
+        perspiciatis veritatis tenetur iure.
+      </p>
+    </div>
+  </body>
+</html>

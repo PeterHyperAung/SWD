@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fa Practical Project</title>
+    <style>
+      .room {
+        width: 600px;
+        height: 500px;
+        background-image: url("../images/fapracticalimages/Capture.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        margin: 100px auto;
+        position: relative;
+        overflow: hidden;
+      }
+      body {
+        overflow: hidden;
+      }
+      .human {
+        width: 100px;
+      }
+      .human-group {
+        position: absolute;
+        top: 290px;
+        left: 165px;
+        /* transform: translate(165px, 290px); */
+      }
+
+      .knife {
+        width: 100px;
+        position: absolute;
+        top: 290px;
+        left: 190px;
+        animation: slice 3s 2s both;
+      }
+
+      .fa-img {
+        width: 100px;
+      }
+      .fa {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        position: absolute;
+        animation: aa 8s;
+        flex-direction: column;
+      }
+      @keyframes slice {
+        0% {
+          top: 590px;
+        }
+        40% {
+          top: 290px;
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(60deg);
+        }
+        60% {
+          transform: rotate(0deg);
+        }
+        70% {
+          transform: rotate(60deg);
+        }
+        80% {
+          transform: rotate(0deg);
+        }
+        90% {
+          transform: rotate(60deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      .boy {
+        animation: boyAnimation 7.5s both;
+      }
+
+      .girl {
+        animation: girlAnimation 7.5s both;
+      }
+
+      @keyframes boyAnimation {
+        0% {
+          transform: translateX(-400px);
+        }
+        30% {
+          transform: translateX(0px);
+        }
+        70% {
+          transform: translateX(0px);
+        }
+        100% {
+          transform: translateX(-400px);
+        }
+      }
+
+      @keyframes girlAnimation {
+        0% {
+          transform: translateX(400px);
+        }
+        30% {
+          transform: translateX(0px);
+        }
+        70% {
+          transform: translateX(0px);
+        }
+        100% {
+          transform: translateX(400px);
+        }
+      }
+
+      @keyframes aa {
+        0% {
+          top: 500px;
+        }
+        80% {
+          top: 500px;
+        }
+        100% {
+          top: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="room">
+      <div class="human-group">
+        <img
+          src="../images/fapracticalimages/boy.png"
+          alt=""
+          class="human boy"
+        />
+        <img
+          src="../images/fapracticalimages/girl.png"
+          alt=""
+          class="human girl"
+        />
+      </div>
+
+      <img src="../images/fapracticalimages/knife.png" alt="" class="knife" />
+
+      <div class="fa">
+        <img src="../images/fapracticalimages/fa.png" class="fa-img" alt="" />
+        <p>Fa is the best...</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add and Remove</title>
+</head>
+<body>
+
+<ul id="select">
+  <li value="mm">mm</li>
+  <li value="cn">cn</li>
+  <li value="kr">kr</li>
+</ul>
+
+
+<script src="js/jQuery.js"></script>
+<script>
+
+  $("#select").append('<li>us</li>');
+  $("#select").append('<li>uk</li>');
+
+  $("#select").prepend('<li>two</li>');
+  $("#select").prepend('<li>one</li>');
+
+  $("#select").after('<p>This is after</p>');
+  $("#select").after('<p>This is after 2</p>');
+  $("#select").before('<p>This is before</p>');
+  $("#select").before('<p>This is before 2</p>');
+
+  $("#select").empty();
+  $("#select").remove();
+
+</script>
+
+</body>
+</html>

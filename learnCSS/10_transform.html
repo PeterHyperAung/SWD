@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 300px;
+        /* transform: scale(1.2); */
+        transition: 1s;
+      }
+      img:hover {
+        transform: translate(100px, 100px) scale(1.2) rotate(20deg);
+      }
+      div {
+        width: 130px;
+        height: 50px;
+        background-color: tomato;
+      }
+      .rotateX {
+        transform: perspective(200px) rotateX(50deg);
+      }
+      .rotateY {
+        transform: perspective(200px) rotateY(50deg);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../images/jennie8.jpg" alt="" />
+    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+
+    <hr />
+    <h2>SkewX</h2>
+    <div style="transform: skewX(-20deg)"></div>
+    <hr />
+    <h2>SkewY</h2>
+    <div style="transform: skewY(-20deg)"></div>
+    <hr />
+    <h2>Skew</h2>
+    <div style="transform: skew(20deg)"></div>
+    <hr />
+    <div class="rotateX">San Kyi Tar Par</div>
+    <hr />
+    <div class="rotateY">San Kyi Tar Par</div>
+  </body>
+</html>

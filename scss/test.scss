@@ -1,0 +1,22 @@
+$primaryColor: lightcoral;
+
+@mixin aa($x) {
+  border: 2px solid black;
+  margin: $x;
+}
+
+.one {
+  background-color: $primaryColor;
+  height: 100px;
+  @include aa(70px);
+}
+
+.two {
+  h1 {
+    color: $primaryColor;
+  }
+
+  p {
+    color: $primaryColor;
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Back & Closure</title>
+  </head>
+  <body>
+    <button id="one">click</button>
+    <script>
+      function aa() {
+        console.log("this is aa");
+
+        function aaa() {
+          console.log("this is aaa");
+        }
+
+        aaa();
+      }
+
+      function bb(x, y) {
+        let result = x * y;
+
+        function bbb(z) {
+          console.log("this is final result " + z);
+        }
+
+        bbb(result);
+      }
+
+      function cc(x) {
+        let input = "this is input - " + x;
+        return function () {
+          console.log(input);
+        };
+      }
+
+      // console.log(cc("abc")());
+
+      function bb2(x) {
+        console.log("final result is " + x);
+      }
+
+      function aa2(x, y, callback) {
+        let z = x + y;
+        callback(z);
+      }
+
+      aa2(1, 2, bb2);
+    </script>
+  </body>
+</html>

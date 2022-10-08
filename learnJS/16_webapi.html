@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web API</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- <input type="file" id="upload" multiple /> -->
+
+    <form action="" id="test">
+      <input type="text" name="username" />
+      <br />
+      <input type="text" name="password" />
+      <br />
+      <button>Register</button>
+    </form>
+    <!-- <ul id="list"></ul> -->
+    <!-- <audio src="../audio/blackpinkstay.mp3" controls></audio> -->
+    <script>
+      let a = new Audio("../audio/blackpinkstay.mp3");
+      // a.play();
+      // a.pause();
+      /*
+      document.getElementById("upload").addEventListener("change", function () {
+        let upload = this.files;
+        console.log(upload);
+
+        for (x of upload) {
+          document.getElementById("list").innerHTML += `<li>${x.name}</li>`;
+        }
+      });
+      */
+
+      document.getElementById("test").addEventListener("submit", function (e) {
+        let form = new FormData(this);
+        console.log(form.getAll("username"));
+        form.append("job", "web developer");
+        form.append("status", false);
+
+        for (let [x, y] of form.entries()) {
+          console.log(x, y);
+        }
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

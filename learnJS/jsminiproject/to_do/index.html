@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 6%,
+            rgba(71, 71, 71, 0.04) 6%,
+            rgba(71, 71, 71, 0.04) 22%,
+            transparent 22%,
+            transparent 100%
+          ),
+          linear-gradient(
+            45deg,
+            transparent 0%,
+            transparent 20%,
+            rgba(71, 71, 71, 0.04) 20%,
+            rgba(71, 71, 71, 0.04) 47%,
+            transparent 47%,
+            transparent 100%
+          ),
+          linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 24%,
+            rgba(71, 71, 71, 0.04) 24%,
+            rgba(71, 71, 71, 0.04) 62%,
+            transparent 62%,
+            transparent 100%
+          ),
+          linear-gradient(
+            45deg,
+            transparent 0%,
+            transparent 73%,
+            rgba(71, 71, 71, 0.04) 73%,
+            rgba(71, 71, 71, 0.04) 75%,
+            transparent 75%,
+            transparent 100%
+          ),
+          linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+        color: #333;
+        display: flex;
+        font-family: "Roboto", sans-serif;
+        flex-flow: column;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+      }
+      #add {
+        width: 100px;
+        background-color: #000;
+        color: white;
+        border: none;
+        padding: 12px 5px;
+      }
+
+      input {
+        padding: 10px 20px;
+        min-width: 280px;
+        margin-top: 30px;
+      }
+      input:focus {
+        outline: none;
+      }
+      ul {
+        width: 300px;
+      }
+      ul li span {
+        display: inline-block;
+        width: 62%;
+      }
+      ul li {
+        width: 100%;
+      }
+      button {
+        padding: 5px 10px;
+        border: none;
+        color: white;
+      }
+
+      button[onclick^="edit"] {
+        background-color: #29c2ff;
+        color: #222;
+        margin-right: 5px;
+      }
+      button[onclick^="del"] {
+        background-color: #ff355e;
+        color: #f1f1f1;
+        margin-right: 5px;
+      }
+      li {
+        margin-bottom: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input-group">
+      <input type="text" id="input" placeholder="Write Something" /><button
+        id="add"
+      >
+        Add
+      </button>
+    </div>
+    <br />
+    <ul id="list"></ul>
+
+    <script>
+      let input = document.getElementById("input");
+      let list = document.getElementById("list");
+      let id = 1;
+      let k = Object.keys(localStorage);
+      k = k.map((el) => parseInt(el));
+      k.sort((a, b) => a - b);
+      if (localStorage.length > 0) {
+        id = Number(k[k.length - 1]) + 1;
+      }
+      function save(x) {
+        localStorage.setItem(id, x);
+        id++;
+      }
+      function addToList(x, y) {
+        let li = document.createElement("li");
+        li.setAttribute("id", `list-${y}`);
+        let span = document.createElement("span");
+        span.setAttribute("id", `span-${y}`);
+        let text = document.createTextNode(x + " ");
+        span.append(text);
+        let btn = document.createElement("button");
+        let btnText = document.createTextNode("Delete");
+        let btn2 = document.createElement("button");
+        btn2.setAttribute("onclick", `edit(${y})`);
+        let btn2Text = document.createTextNode("Edit");
+        btn2.appendChild(btn2Text);
+        btn.setAttribute("onclick", `del(${y})`);
+        btn.appendChild(btnText);
+        li.appendChild(span);
+        list.appendChild(li);
+        li.appendChild(btn2);
+        li.appendChild(btn);
+        input.value = "";
+      }
+
+      function edit(x) {
+        let current = document.getElementById("span-" + x);
+        let newText = prompt("Write the new text") + " ";
+        current.innerText = newText;
+        localStorage.setItem(x, newText);
+      }
+      function showList() {
+        console.log();
+        k.map(function (el) {
+          addToList(localStorage.getItem(el), el);
+        });
+      }
+
+      function del(x) {
+        console.log(x);
+        let current = document.getElementById("list-" + x);
+        current.remove();
+        localStorage.removeItem(x);
+      }
+
+      showList();
+
+      document.addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+          let note = input.value;
+          if (note === "" || note === " ") {
+            alert("Please write something");
+          } else {
+            addToList(note);
+            save(note);
+          }
+        }
+      });
+
+      document.getElementById("add").onclick = function () {
+        let note = input.value;
+        if (note === "" || note === " ") {
+          alert("Please write something");
+        } else {
+          addToList(note);
+          save(note);
+        }
+      };
+    </script>
+  </body>
+</html>

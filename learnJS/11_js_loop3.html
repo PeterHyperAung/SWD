@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Js Loop 3</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f4f4f4;
+        font-family: sans-serif;
+        line-height: 1.5;
+      }
+
+      .news {
+        width: 80%;
+        margin: 20px auto;
+        columns: 3 250px;
+        column-gap: 30px;
+      }
+
+      .card {
+        width: 100%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+      }
+
+      .card-img {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .author {
+        font-size: 0.7rem;
+      }
+
+      .description {
+        font-size: 0.9rem;
+      }
+
+      .read-more {
+        text-decoration: none;
+        background-color: #222;
+        height: 50px;
+        width: 170px;
+        padding: 10px 20px;
+        text-align: center;
+        line-height: 2;
+        color: #f6f6f6;
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      .box {
+        padding: 15px 25px 20px;
+        word-break: break-word;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>News Site</h1>
+    <div class="news"></div>
+    <script src="./news.js"></script>
+
+    <script>
+      console.log(data);
+      let article = data.articles;
+      let news = document.querySelector(".news");
+      article.map(function (el, index) {
+        news.innerHTML += `
+    <div class="card">
+      <img src="${el.urlToImage}" alt="" class="card-img">
+      <div class="box">
+        <h4 class="title">${el.title}</h4>
+        <smaill class="author">${el.author}</smaill>
+        <p class="description">${el.description}</p>
+        <a href="${el.url}" class="read-more">Read More</a>
+      </div>
+    </div>
+    `;
+      });
+    </script>
+  </body>
+</html>

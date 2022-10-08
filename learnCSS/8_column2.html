@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Josefin Sans", sans-serif;
+      }
+      .title {
+        color: #f4a7bb;
+        margin: 30px auto;
+        text-align: center;
+        font-size: 3em;
+      }
+      .title span {
+        color: black;
+      }
+      .gallery {
+        columns: 3 300px;
+        column-gap: 50px;
+        width: 70vw;
+        margin: auto;
+      }
+      .gallery-img {
+        width: 100%;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        transition: 0.7s;
+      }
+      .gallery-img:hover {
+        filter: contrast(150%);
+      }
+      @media screen and (max-width: 1024px) {
+        .gallery {
+          width: 92%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .gallery {
+          columns: 2 140px;
+          column-gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title"><span>Jennie's</span> Gallery</h1>
+    <div class="gallery">
+      <img
+        src="../images/jennie.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie2.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie3.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie4.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie5.webp"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie6.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie7.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie8.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie9.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie10.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie11.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie12.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie13.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie14.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+      <img
+        src="../images/jennie15.jpg"
+        alt="jennie's cute picture"
+        class="gallery-img"
+      />
+    </div>
+  </body>
+</html>

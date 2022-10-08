@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav Bar</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,400&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      ::selection {
+        background-color: transparent;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        margin: auto;
+        padding: 10px 0;
+      }
+
+      .container {
+        width: 100vw;
+        background-color: #222;
+      }
+
+      .mobile-menu-btn {
+        width: 30px;
+        height: 30px;
+        color: #f4f4f4;
+        display: none;
+      }
+
+      .nav-list {
+        padding: 0;
+      }
+      .nav-list li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 5px 0;
+      }
+      .nav-item {
+        margin: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #ddd;
+        font-weight: 400;
+      }
+
+      .brand a {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      @media screen and (max-width: 800px) {
+        header {
+          width: 90%;
+          flex-wrap: wrap;
+          padding: 10px 0;
+        }
+        .mobile-menu-btn {
+          display: block;
+        }
+        .nav {
+          width: 100%;
+        }
+        .nav-list li {
+          display: block;
+        }
+
+        .show-nav {
+          display: block;
+        }
+
+        .hidden-nav {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <a href="#">MMS IT</a>
+        </div>
+        <div class="mobile-menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <nav class="nav hidden-nav">
+          <ul class="nav-list">
+            <li><a href="#" class="nav-item">Home</a></li>
+            <li><a href="#" class="nav-item">About</a></li>
+            <li><a href="#" class="nav-item">Services</a></li>
+            <li><a href="#" class="nav-item">Gallery</a></li>
+            <li><a href="#" class="nav-item">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <script>
+      let nav = document.querySelector(".nav");
+      let btn = document.querySelector(".mobile-menu-btn");
+      btn.onclick = function () {
+        nav.classList.toggle("show-nav");
+        nav.classList.toggle("hidden-nav");
+      };
+    </script>
+  </body>
+</html>

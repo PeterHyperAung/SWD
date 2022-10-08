@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f4f4f4;
+        font-family: sans-serif;
+        line-height: 1.5;
+      }
+
+      .news {
+        width: 80%;
+        margin: 20px auto;
+        columns: 3 250px;
+        column-gap: 30px;
+      }
+
+      .card {
+        width: 100%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+      }
+
+      .card-img {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .author {
+        font-size: 0.7rem;
+      }
+
+      .description {
+        font-size: 0.9rem;
+      }
+
+      .read-more {
+        text-decoration: none;
+        background-color: #222;
+        height: 50px;
+        width: 170px;
+        padding: 10px 20px;
+        text-align: center;
+        line-height: 2;
+        color: #f6f6f6;
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      .box {
+        padding: 15px 25px 20px;
+        word-break: break-word;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .text {
+        position: relative;
+        z-index: 10;
+        font-size: 35px;
+      }
+
+      .text::before {
+        content: "Loading...";
+        height: 100%;
+        width: 100%;
+        color: dodgerblue;
+        position: absolute;
+        border-right: 3px solid black;
+        box-sizing: border-box;
+        transform-origin: left;
+        animation: ani 0.5s linear infinite alternate;
+        overflow: hidden;
+      }
+
+      @keyframes ani {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="text">Loading...</div>
+    </div>
+    <h1>News</h1>
+    <div class="news"></div>
+    <script>
+      let containerEl = document.getElementById("container");
+      fetch(
+        "https://newsapi.org/v2/everything?q=tesla&from=2022-02-11&sortBy=publishedAt&apiKey=57c47e55b52349a0a95105782ebbfdc4"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          let articles = data.articles;
+          let news = document.querySelector(".news");
+          articles.forEach(function (el, index) {
+            news.innerHTML += `
+    <div class="card">
+      <img src="${el.urlToImage}" alt="" class="card-img">
+      <div class="box">
+        <h4 class="title">${el.title}</h4>
+        <smaill class="author">${el.author}</smaill>
+        <p class="description">${el.description}</p>
+        <a href="${el.url}" class="read-more">Read More</a>
+      </div>
+    </div>
+    `;
+          });
+
+          container.style.display = "none";
+        })
+        .catch(function () {
+          console.log("You are in error");
+        });
+
+      // status code 200 400 500
+
+      // jsonplaceholder
+    </script>
+  </body>
+</html>

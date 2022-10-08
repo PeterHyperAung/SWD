@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Method</title>
+  </head>
+  <body>
+    <h4>10 useful methods for JS Array</h4>
+    <ol>
+      <li>join()</li>
+      <li>push()</li>
+      <li>pop()</li>
+      <li>shift()</li>
+      <li>unshift()</li>
+      <li>splice()</li>
+      <li>concat()</li>
+      <li>include()</li>
+      <li>sort()</li>
+      <li>reverse()</li>
+    </ol>
+
+    <script>
+      let arr = ["Banana", "Orange", "Apple", "Mango"];
+      console.log(arr);
+      console.log(arr.join());
+      console.log(arr.join("-"));
+      console.log(arr.join(" - "));
+
+      arr.unshift("abc");
+      arr.push("def");
+      console.log(arr);
+
+      let a = arr.pop();
+      console.log(a, arr);
+
+      let b = arr.shift();
+      console.log(b, arr);
+
+      let c = arr.splice(2, 2);
+      console.log("Deleted =", c);
+      console.log("left =", arr);
+
+      arr = ["Banana", "Orange", "Apple", "Mango"];
+
+      arr.splice(2, 0, "abc", "def");
+      console.log(arr);
+
+      arr.splice(2, 3, "xyz");
+      console.log(arr);
+
+      let test = ["x", "y", "z"];
+      let test2 = ["a", "b", "c"];
+
+      let d = test.concat(arr);
+      console.log(d);
+
+      let e = arr.concat(test, test2);
+      console.log(e);
+
+      console.log(arr.includes("Banana"));
+      console.log(arr.includes("testing"));
+
+      arr.sort();
+      console.log(arr);
+
+      arr.reverse();
+      console.log(arr);
+    </script>
+  </body>
+</html>

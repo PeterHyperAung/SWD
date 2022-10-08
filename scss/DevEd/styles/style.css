@@ -1,0 +1,36 @@
+header, .contact {
+  color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: tomato;
+}
+
+header button, .contact button {
+  background-color: #38928e;
+}
+
+header button::after, .contact button::after {
+  content: "Hello.....";
+}
+
+.contact {
+  background-color: lightcoral;
+  /* + - * % */
+  width: 80%;
+}
+
+.contact button {
+  background-color: #38928e;
+}
+/*# sourceMappingURL=style.css.map */

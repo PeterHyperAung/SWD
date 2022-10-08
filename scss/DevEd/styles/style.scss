@@ -1,0 +1,13 @@
+@import "./_header";
+@import "./_variable";
+
+.contact {
+  @extend header;
+  background-color: lightcoral;
+  /* + - * % */
+  width: 100% - 20%;
+
+  button {
+    background-color: $primaryBtn;
+  }
+}

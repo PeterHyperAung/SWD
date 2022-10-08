@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Flex</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        flex-direction: row; /* row column row-revese column-reverse */
+        flex-wrap: wrap;
+        flex-flow: column wrap;
+        justify-content: space-evenly; /* flex-start flex-end space-around space-between space evenly */
+        align-items: flex-start; /* default stretch flex-start flex-end center */
+        align-content: space-evenly; /* flex-start flex-end space-around space-between space evenly */
+        height: 90vh;
+      }
+      .col {
+        background-color: #707070;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col">
+        <h1>This is One</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut autem
+          deserunt, doloribus exercitationem inventore laboriosam nam neque odio
+          quia quis, ratione rem sequi sint sunt suscipit, voluptatibus.
+          Assumenda, porro?
+        </p>
+      </div>
+      <div class="col">
+        <h1>This is Two</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut autem
+          deserunt, doloribus exercitationem inventore laboriosam nam neque odio
+          quia quis, ratione rem sequi sint sunt suscipit, voluptatibus.
+          Assumenda, porro?
+        </p>
+      </div>
+      <div class="col">
+        <h1>This is Three</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut autem
+          deserunt, doloribus exercitationem inventore laboriosam nam neque odio
+          quia quis, ratione rem sequi sint sunt suscipit, voluptatibus.
+          Assumenda, porro?
+        </p>
+      </div>
+      <div class="col">
+        <h1>This is One</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut autem
+          deserunt, doloribus exercitationem inventore laboriosam nam neque odio
+          quia quis, ratione rem sequi sint sunt suscipit, voluptatibus.
+          Assumenda, porro?
+        </p>
+      </div>
+      <div class="col">
+        <h1>This is Two</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut autem
+          deserunt, doloribus exercitationem inventore laboriosam nam neque odio
+          quia quis, ratione rem sequi sint sunt suscipit, voluptatibus.
+          Assumenda, porro?
+        </p>
+      </div>
+      <div class="col">
+        <h1>This is Three</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut autem
+          deserunt, doloribus exercitationem inventore laboriosam nam neque odio
+          quia quis, ratione rem sequi sint sunt suscipit, voluptatibus.
+          Assumenda, porro?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Animation 1</title>
+    <style>
+      .obj {
+        width: 100px;
+        height: 100px;
+        background-color: dodgerblue;
+        transition: 0.5s;
+        animation-name: first;
+        animation-duration: 1s;
+        /* animation-delay: 5s; */
+        transform: translateX(150px);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+        animation: first 2s linear 0s 3 alternate;
+      }
+
+      /* .obj:hover {
+        transform: translateX(30px);
+      } */
+
+      @keyframes first {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(150px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="obj"></div>
+  </body>
+</html>
